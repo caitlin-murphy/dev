@@ -1,0 +1,91 @@
+/*order matters*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.home {
+  perspective: 1px;
+  /*gives it depth*/
+  transform-style: preserve-3d;
+  /*maintain the 3d. helpful when stretching container*/
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+.slide:before {
+  content: " ";
+  position: absolute;
+  /*should only be used for ~trix~*/
+  top: 0;
+  /*pins to four corners of the page*/
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: 50% 50% / cover;
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10;
+  /*any elements inside of this will have 25 vertical height and 10 on both sides to center*/
+  min-height: 100vh;
+  /* 100% vertical height */
+  width: 100vw;
+  transform-style: inherit;
+  background: 50% 50% / cover;
+  /* takes over whole view port*/
+}
+
+.slide p,
+.slide figure {
+  position: relative;
+  z-index: -1;
+}
+
+.slide p {
+  transform: translateZ(0.2px) scale(0.8);
+  width: 25%;
+  float: left;
+}
+
+.slide figure {
+  transform: translateZ(-0.4px) scale(1.4);
+  float: right;
+}
+
+#title {
+  background-image: url("http://placehold.it/1024x768/ffff00");
+  background-attachment: fixed;
+}
+
+#slide1:before {
+  background-image: url("http://placehold.it/1024x768/00ff00");
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+}
+
+#slide2 {
+  background-image: url("http://placehold.it/1024x768");
+  background-attachment: fixed;
+}
+
+#slide3:before {
+  background-image: url("http://placehold.it/1024x768/0000ff");
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+}
+
+#slide4 {
+  background-image: url("http://placehold.it/1024x768/ff0000");
+  background-attachment: fixed;
+}
