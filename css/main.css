@@ -53,7 +53,7 @@ body{
 h1, h2, h3, h4{
 	font-family: 'Roboto Slab', serif;
 	font-weight: 700;
-	color: rgba(153,178,183, 1);
+	color: rgba(128, 0, 42, 1);
 }
 
 .gallery{
@@ -64,4 +64,9 @@ h1, h2, h3, h4{
 
 .gallery img{
 	width: 400px;
+}
+
+a{
+	text-decoration: none;
+	font-weight: 700;
 }
